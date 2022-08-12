@@ -1,5 +1,5 @@
 resources:
-  - name: dbp_repo
+  - name: dbp_repo2
     type: GitRepo
     configuration:
       gitProvider: github_integration                       # <-- replace with your integration
@@ -45,7 +45,7 @@ pipelines:
           dockerImageName: avigdor.jfrog.io/main1-docker-alpine-local/shimon  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
-            - name: dbp_repo
+            - name: dbp_repo2
           integrations:
             - name: artifactory_integration                           # <-- replace with your artifactory integration
 
@@ -74,7 +74,7 @@ pipelines:
         configuration:
           targetRepository: main1-docker-alpine-local
           integrations:
-            - name: art
+            - name: artifactory_integration
           inputResources:
             - name: dbp_build_info
           outputResources:
