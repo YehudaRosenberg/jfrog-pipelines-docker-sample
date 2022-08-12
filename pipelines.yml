@@ -47,13 +47,13 @@ pipelines:
           inputResources:
             - name: dbp_repo
           integrations:
-            - name: art                            # <-- replace with your artifactory integration
+            - name: artifactory_integration                           # <-- replace with your artifactory integration
 
       - name: docker_push
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: docker-local
+          targetRepository: main1-docker-alpine-local
           integrations:
             - name: artifactory_integration                            # <-- replace with your artifactory integration
           inputSteps:
@@ -72,7 +72,7 @@ pipelines:
       - name: promote_dbp_build
         type: PromoteBuild
         configuration:
-          targetRepository: demo-pipelines
+          targetRepository: main1-docker-alpine-local
           integrations:
             - name: art
           inputResources:
