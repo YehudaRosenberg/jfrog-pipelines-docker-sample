@@ -84,5 +84,5 @@ pipelines:
         type: XrayScan
         configuration:
           inputResources:
-            - name: dbp_build_info
+           - name: dbp_build_info
 
