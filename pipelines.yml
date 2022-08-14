@@ -80,7 +80,7 @@ pipelines:
           outputResources:
             - name: dbp_promoted_build_info
 
-        - name: xrayScanStep
+      - name: xrayScanStep
         type: XrayScan
         configuration:
           inputResources:
